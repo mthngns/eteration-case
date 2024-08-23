@@ -5,19 +5,18 @@ import { PiBag } from "react-icons/pi";
 import { TbUser } from "react-icons/tb";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import IconButton from "../../components/IconButton/IconButton";
+import { useSelector } from "react-redux";
+import { getBasket } from "@/redux/features/basket/store/basket";
+import {
+  getFilters,
+  setSearchTerm,
+} from "@/redux/features/filters/store/filters";
+import { useAppDispatch } from "@/redux/store";
 import Link from "next/link";
 const Header = () => {
-  const basket = {basketAmount:0}
-  const filters = {brands:["opel","volkswagen","mercedes","audi"],
-    modelsBySelectedBrands:[ "Astra", "A3", "A5", "A6" ],
-    selectedBrands:["volkswagen"],
-    selectedModels:["A3"],
-    sortMethod:{
-      sortBy: "createdAt",
-      order: "asc",
-    },
-    searchTerm:""
-  } 
+  const dispatch = useAppDispatch();
+  const basket = useSelector(getBasket);
+  const filters = useSelector(getFilters);
   const basketAmount = basket.basketAmount;
   const searchTerm = filters.searchTerm;
 
@@ -40,7 +39,7 @@ const Header = () => {
             id={"header-search-input"}
             placeholder={"Search"}
             value={searchTerm}
-            onChange={(e) => {}}
+            onChange={(e) => dispatch(setSearchTerm(e.target.value))}
           />
         </div>
         <div className="flex w-2/3 text-sm justify-end items-center md:w-3/12 md:gap-x-4 order-2 md:order-3 text-white">
