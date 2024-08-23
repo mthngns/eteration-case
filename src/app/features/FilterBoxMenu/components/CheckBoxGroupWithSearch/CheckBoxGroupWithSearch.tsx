@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FaAngleDown, FaCheck } from "react-icons/fa";
 import SearchBar from "@/app/components/SearchBar/SearchBar";
 import IconButton from "@/app/components/IconButton/IconButton";
+import { FaAngleDown, FaCheck } from "react-icons/fa";
 
 interface CheckboxGroupProps {
   title: string;

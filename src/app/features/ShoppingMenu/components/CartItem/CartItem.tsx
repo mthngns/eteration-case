@@ -1,5 +1,5 @@
-import { ExtendedProduct } from "@/app/lib/types";
 import React from "react";
+import { ExtendedProduct } from "@/app/lib/types";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 interface CartItemProps {

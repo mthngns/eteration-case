@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { PiBag } from "react-icons/pi";
 import { TbUser } from "react-icons/tb";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -12,7 +13,7 @@ import {
   setSearchTerm,
 } from "@/redux/features/filters/store/filters";
 import { useAppDispatch } from "@/redux/store";
-import Link from "next/link";
+
 const Header = () => {
   const dispatch = useAppDispatch();
   const basket = useSelector(getBasket);

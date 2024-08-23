@@ -1,8 +1,8 @@
-import { Product } from "@/app/lib/types";
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
-import { useRouter } from "next/navigation";
 import ImageWithLoader from "../ImageWithLoader/ImageWithLoader";
+import { Product } from "@/app/lib/types";
+import { useRouter } from "next/navigation";
 
 interface ProductGalleryCardProps {
   product: Product;

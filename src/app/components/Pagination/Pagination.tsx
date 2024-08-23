@@ -1,4 +1,3 @@
-import { LIMIT } from "@/app/lib/constants";
 import React from "react";
 
 interface PaginationProps {
