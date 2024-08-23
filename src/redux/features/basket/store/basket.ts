@@ -1,6 +1,6 @@
-import { ExtendedProduct } from "@/app/lib/types";
 import { RootState } from "@/redux/store";
 import { createSlice } from "@reduxjs/toolkit";
+import { ExtendedProduct } from "@/app/lib/types";
 
 export interface BasketState {
   productList: ExtendedProduct[];
@@ -20,7 +20,7 @@ const calculateBasketAmount = (products: ExtendedProduct[]): string => {
       0
     )
     .toFixed(2)
-    .toString();
+    .toString(); // İsteğe bağlı olarak ondalıklı sayıyı iki basamağa yuvarlayabilirsiniz
 };
 
 const basketSlice = createSlice({
@@ -32,8 +32,31 @@ const basketSlice = createSlice({
       state.productList.push(action.payload);
       state.basketAmount = calculateBasketAmount(state.productList);
     },
-    incrementProductQuantity: (state, action) => {},
-    decrementProductQuantity: (state, action) => {},
+    incrementProductQuantity: (state, action) => {
+      const product = state.productList.find(
+        (product) => product.id === action.payload
+      );
+      if (product) {
+        product.pcs = (parseInt(product.pcs) + 1).toString();
+        state.basketAmount = calculateBasketAmount(state.productList);
+      }
+    },
+    decrementProductQuantity: (state, action) => {
+      const product = state.productList.find(
+        (product) => product.id === action.payload
+      );
+      if (product) {
+        if (parseInt(product.pcs) > 1) {
+          product.pcs = (parseInt(product.pcs) - 1).toString();
+          state.basketAmount = calculateBasketAmount(state.productList);
+        } else {
+          state.productList = state.productList.filter(
+            (product) => product.id !== action.payload
+          );
+          state.basketAmount = calculateBasketAmount(state.productList);
+        }
+      }
+    },
   },
 });
 

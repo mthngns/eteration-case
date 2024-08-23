@@ -1,11 +1,7 @@
-import storage from "redux-persist/lib/storage";
-
-import { api } from "./api";
-import { useDispatch } from "react-redux";
-import { basketReducer } from "./features/basket/store/basket";
-import { filtersReducer } from "./features/filters/store/filters";
-import { productsReducer } from "./features/products/store/products";
 import { type Action, combineReducers, configureStore } from "@reduxjs/toolkit";
+import { api } from "./api";
+import { productsReducer } from "./features/products/store/products";
+
 import {
   FLUSH,
   PAUSE,
@@ -16,6 +12,10 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { filtersReducer } from "./features/filters/store/filters";
+import { basketReducer } from "./features/basket/store/basket";
+import { useDispatch } from "react-redux";
 
 const appReducer = combineReducers({
   products: productsReducer,
