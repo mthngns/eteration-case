@@ -1,14 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import ProductListLayout from "./productListLayout";
 import { Product } from "../lib/types";
 import ProductGallery from "../components/ProductGallery/ProductGallery";
 import FilterBoxMenu from "../features/FilterBoxMenu/FilterBoxMenu";
 import ShoppingMenu from "../features/ShoppingMenu/ShoppingMenu";
 import Pagination from "../components/Pagination/Pagination";
+import { useConfigureFilters } from "../hooks/configureFilters";
+import ErrorCard from "../components/ErrorCard/ErrorCard";
 
 const ProductList = () => {
+  const [pageCount, setPageCount] = useState(0);
+
   const data = {
     products: [
       {
@@ -68,8 +72,14 @@ const ProductList = () => {
     console.log(product);
   };
 
-  const currentPage =  1
-  const totalPages = 7
+  const {
+    currentPage,
+    totalPages,
+    configureError,
+  } = useConfigureFilters({ pageCount });
+  if (configureError) {
+    return <ErrorCard />;
+  }
 
   return (
     <ProductListLayout>
