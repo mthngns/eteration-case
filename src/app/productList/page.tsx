@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import ProductListLayout from "./productListLayout";
@@ -6,6 +6,7 @@ import { Product } from "../lib/types";
 import ProductGallery from "../components/ProductGallery/ProductGallery";
 import FilterBoxMenu from "../features/FilterBoxMenu/FilterBoxMenu";
 import ShoppingMenu from "../features/ShoppingMenu/ShoppingMenu";
+import Pagination from "../components/Pagination/Pagination";
 
 const ProductList = () => {
   const data = {
@@ -64,23 +65,33 @@ const ProductList = () => {
   const isFetching = false;
 
   const handleAddItemToBasket = (product: Product) => {
-    console.log(product)
+    console.log(product);
   };
+
+  const currentPage =  1
+  const totalPages = 7
+
   return (
     <ProductListLayout>
       <FilterBoxMenu />
 
-    <div className="flex flex-col pb-4 order-3 lg:order-2 lg:col-span-7 2xl:col-span-8">
-
-      <ProductGallery
-        addToCard={(product) => handleAddItemToBasket(product)}
-        isLoading={isFetching}
-        className="grid grid-cols-2 w-full gap-4 justify-between sm:grid sm:grid-cols-3 sm:gap-4 xl:grid xl:grid-cols-4 "
-        products={data.products}
-        productListInBasket={basket.productList}
-      />
-    </div>
-      <ShoppingMenu/>
+      <div className="flex flex-col pb-4 order-3 lg:order-2 lg:col-span-7 2xl:col-span-8">
+        <ProductGallery
+          addToCard={(product) => handleAddItemToBasket(product)}
+          isLoading={isFetching}
+          className="grid grid-cols-2 w-full gap-4 justify-between sm:grid sm:grid-cols-3 sm:gap-4 xl:grid xl:grid-cols-4 "
+          products={data.products}
+          productListInBasket={basket.productList}
+        />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          next={() => {}}
+          previous={() => {}}
+          onPageChange={(page) => {}}
+        />
+      </div>
+      <ShoppingMenu />
     </ProductListLayout>
   );
 };
