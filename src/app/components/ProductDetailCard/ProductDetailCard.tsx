@@ -1,6 +1,6 @@
 import React from "react";
-import ImageWithLoader from "../ImageWithLoader/ImageWithLoader";
 import CustomButton from "../CustomButton/CustomButton";
+import ImageWithLoader from "../ImageWithLoader/ImageWithLoader";
 import { Product } from "@/app/lib/types";
 
 interface ProductDetailCardProps {

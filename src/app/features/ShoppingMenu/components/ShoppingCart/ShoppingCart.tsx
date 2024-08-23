@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ExtendedProduct } from "@/app/lib/types";
 import CartItem from "../CartItem/CartItem";
 import IconButton from "@/app/components/IconButton/IconButton";
 import { FaAngleDown } from "react-icons/fa";
+import { ExtendedProduct } from "@/app/lib/types";
 
 interface ShoppingCartProps {
   title: string;

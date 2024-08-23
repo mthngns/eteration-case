@@ -1,5 +1,5 @@
-import IconButton from "@/app/components/IconButton/IconButton";
 import React, { useEffect, useState } from "react";
+import IconButton from "@/app/components/IconButton/IconButton";
 import { FaAngleDown } from "react-icons/fa";
 
 interface CheckoutProps {

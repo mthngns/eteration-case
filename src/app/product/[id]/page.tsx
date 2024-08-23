@@ -1,18 +1,17 @@
 "use client";
-
-import ErrorCard from "@/app/components/ErrorCard/ErrorCard";
+import React from "react";
 import Loader from "@/app/components/Loader/Loader";
-import ProductDetailCard from "@/app/components/ProductDetailCard/ProductDetailCard";
+import ErrorCard from "@/app/components/ErrorCard/ErrorCard";
 import ShoppingMenu from "@/app/features/ShoppingMenu/ShoppingMenu";
+import ProductDetailCard from "@/app/components/ProductDetailCard/ProductDetailCard";
 import { Product } from "@/app/lib/types";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "@/redux/store";
+import { useGetProductByIdQuery } from "@/redux/features/products/services/products";
 import {
   addItemToBasket,
   getBasket,
 } from "@/redux/features/basket/store/basket";
-import { useGetProductByIdQuery } from "@/redux/features/products/services/products";
-import { useAppDispatch } from "@/redux/store";
-import React from "react";
-import { useSelector } from "react-redux";
 
 const ProductDetail = ({ params }: { params: { id: string } }) => {
   const productId = params.id;

@@ -5,9 +5,9 @@ export interface SearchBarProps extends InputHTMLAttributes<HTMLInputElement> {
   htmlFor?: string;
 }
 
-const SearchBar:React.FC<SearchBarProps> = ({onClick,...props}) => {
-    const defaultClasses = "flex w-full items-center";
-    const combinedClasses = `${defaultClasses} ${props.className}`;
+const SearchBar: React.FC<SearchBarProps> = ({ onClick, ...props }) => {
+  const defaultClasses = "flex w-full items-center";
+  const combinedClasses = `${defaultClasses} ${props.className}`;
   return (
     <div className={combinedClasses}>
       <label htmlFor={props.htmlFor} className="sr-only">
@@ -30,4 +30,3 @@ const SearchBar:React.FC<SearchBarProps> = ({onClick,...props}) => {
 };
 
 export default SearchBar;
-

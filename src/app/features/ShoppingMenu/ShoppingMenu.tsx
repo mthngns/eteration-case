@@ -1,5 +1,6 @@
 import React from "react";
-
+import Checkout from "./components/Checkout/Checkout";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { useAppDispatch } from "@/redux/store";
 import { useSelector } from "react-redux";
 import {
@@ -9,8 +10,6 @@ import {
   resetBasketState,
 } from "@/redux/features/basket/store/basket";
 import { Product } from "@/app/lib/types";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
-import Checkout from "./components/Checkout/Checkout";
 
 const ShoppingMenu = () => {
   const dispatch = useAppDispatch();

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import IconButton from "@/app/components/IconButton/IconButton";
 import { FaAngleDown } from "react-icons/fa";
 import { SortBy, SortMethod } from "@/app/lib/types";
 import { IoIosRadioButtonOff } from "react-icons/io";
 import { MdOutlineRadioButtonChecked } from "react-icons/md";
-import IconButton from "@/app/components/IconButton/IconButton";
 
 interface RadioButtonGroupProps {
   title: string;

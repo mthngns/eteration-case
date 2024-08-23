@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "@/app/features/Header/Header";
 import React, { ReactNode } from "react";
+import Header from "@/app/features/Header/Header";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (

@@ -1,12 +1,15 @@
-import Image, { ImageProps } from "next/image";
 import React from "react";
+import Image, { ImageProps } from "next/image";
 
 interface ImageWithLoaderProps extends ImageProps {
   isLoading: boolean;
 }
 
-const ImageWithLoader:React.FC<ImageWithLoaderProps> = ({isLoading,...props}) => {
-  if(isLoading){
+const ImageWithLoader: React.FC<ImageWithLoaderProps> = ({
+  isLoading,
+  ...props
+}) => {
+  if (isLoading) {
     return (
       <div
         role="status"
@@ -25,10 +28,7 @@ const ImageWithLoader:React.FC<ImageWithLoaderProps> = ({isLoading,...props}) =>
       </div>
     );
   }
-  return (
-    <Image {...props} alt={props.alt} />
-  );
-
+  return <Image {...props} alt={props.alt} />;
 };
 
 export default ImageWithLoader;
