@@ -5,6 +5,7 @@ import ProductListLayout from "./productListLayout";
 import { Product } from "../lib/types";
 import ProductGallery from "../components/ProductGallery/ProductGallery";
 import FilterBoxMenu from "../features/FilterBoxMenu/FilterBoxMenu";
+import ShoppingMenu from "../features/ShoppingMenu/ShoppingMenu";
 
 const ProductList = () => {
   const data = {
@@ -79,7 +80,7 @@ const ProductList = () => {
         productListInBasket={basket.productList}
       />
     </div>
-
+      <ShoppingMenu/>
     </ProductListLayout>
   );
 };
