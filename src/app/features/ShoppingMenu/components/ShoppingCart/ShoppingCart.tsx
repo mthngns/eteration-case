@@ -64,7 +64,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
         </div>
       )}
       {isMenuOpen && products.length === 0 && (
-        <div className="flex p-2 flex-col h-full border shadow-md max-h-96 overflow-scroll h-20 sm:overflow-scroll lg:h-fit lg:max-h-96">
+        <div className="flex p-2 flex-col border shadow-md max-h-96 overflow-scroll h-20 sm:overflow-scroll lg:h-fit lg:max-h-96">
           <h2>There is no product in your basket</h2>
         </div>
       )}

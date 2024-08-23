@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "@/app/features/Header/Header";
 import React, { ReactNode } from "react";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
@@ -7,6 +8,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
     <div
       className={"w-screen flex flex-col h-full min-h-screen bg-eterationSmoke"}
     >
+      <Header />
       {children}
     </div>
   );
