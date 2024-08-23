@@ -4,6 +4,7 @@ import React from "react";
 import ProductListLayout from "./productListLayout";
 import { Product } from "../lib/types";
 import ProductGallery from "../components/ProductGallery/ProductGallery";
+import FilterBoxMenu from "../features/FilterBoxMenu/FilterBoxMenu";
 
 const ProductList = () => {
   const data = {
@@ -66,6 +67,8 @@ const ProductList = () => {
   };
   return (
     <ProductListLayout>
+      <FilterBoxMenu />
+
     <div className="flex flex-col pb-4 order-3 lg:order-2 lg:col-span-7 2xl:col-span-8">
 
       <ProductGallery
