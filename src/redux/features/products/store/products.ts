@@ -7,7 +7,7 @@ export interface ProductsState {
 }
 
 const initialState: ProductsState = {
-  products: null ,
+  products: null,
 };
 
 const productsSlice = createSlice({
@@ -21,7 +21,7 @@ const productsSlice = createSlice({
   },
 });
 
-export const { setProducts,resetProductsState } = productsSlice.actions;
+export const { setProducts, resetProductsState } = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;
 
 export const getProducts = (state: RootState) => state.products.products;
